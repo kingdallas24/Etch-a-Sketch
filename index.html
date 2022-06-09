@@ -5,20 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
     <title>Etch-a-Sketch</title>
   </head>
   <body>
     <h1>Sketch Pad</h1>
-    <button class="reset">Reset</button>
-    <button class="gridDisplay">Grid Display</button>
+    <p>Select grid option first.</p>
 
-    <div class="colorContainer">
-      <input type="color" id="color" name="color" " />
-      <label for="body">Color Selection</label>
+    <div class="masterContainer">
+      <div class="colorContainer">
+        <button class="clearDisplay">Clear</button>
+        <button class="displayGrid">Display Grid</button>
+        <div>
+          <label for="body">Color Selection</label>
+          <input type="color" id="color" name="color" value="#115BE5" />
+        </div>
+        <div>
+          <label for="body">Background Color Selection</label>
+          <input
+            type="color"
+            id="backgroundColor"
+            name="backgroundColor"
+            value="#5EFF33"
+          />
+        </div>
+
+        <button class="rainbow">Rainbow</button>
+
+        <select name="gridMenu" id="grid">
+          <option class="gridOption" value="main" disabled selected>
+            Grid Options
+          </option>
+          <option value="1">1x1</option>
+          <option value="4">2x2</option>
+          <option value="9">3x3</option>
+          <option value="16">4x4</option>
+          <option value="25">5x5</option>
+          <option value="100">10x10</option>
+          <option value="400">20x20</option>
+          <option value="1600">40x40</option>
+          <option value="6400">80x80</option>
+          <option value="10000">100x100</option>
+        </select>
+      </div>
+
+      <div class="mainContainer"></div>
     </div>
-
-    <div class="mainContainer"></div>
-
     <script src="app.js"></script>
   </body>
 </html>
