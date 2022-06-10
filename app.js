@@ -10,30 +10,28 @@ let cellThree = document.querySelector(".cellThree");
 let cellFour = document.querySelector(".cellFour");
 let colorSelector = document.querySelector("#color");
 let rainbowBtn = document.querySelector(".rainbow");
-
 let showGrid = document.querySelector(".displayGrid");
 let displayGrid = document.querySelector(".displayGrid");
-
 let grid = document.getElementById("grid");
 let mainGridOption = document.querySelector(".gridOption");
 let backgroundColor = document.querySelector("#backgroundColor");
+let eraser = document.querySelector(".erase");
 
 let isMouseDown = false;
-
 let rainbowActive = false;
+let eraserOn = false;
 
 clearDisplayBtn.disabled = true;
-
-// Created drawing tool when mouse is held down
-
-// setup a function that resets the grid and run that function using an event listener on the reset button
-
-// Create an event listener that makes all the cells shrink
 
 grid.addEventListener("input", (e) => {
   clearDisplayBtn.disabled = false;
 
   createGrid();
+});
+
+eraser.addEventListener("click", (e) => {
+  eraser.classList.toggle("eraserActive");
+  eraserOn = true;
 });
 
 showGrid.addEventListener("click", (e) => {
@@ -42,6 +40,7 @@ showGrid.addEventListener("click", (e) => {
 });
 
 rainbowBtn.addEventListener("click", (e) => {
+  eraserOn = false;
   rainbowBtn.classList.toggle("showRainbow");
   if (rainbowBtn.classList.contains("showRainbow")) {
     rainbowActive = true;
@@ -50,9 +49,14 @@ rainbowBtn.addEventListener("click", (e) => {
   }
 });
 
+colorSelector.addEventListener("input", (e) => {
+  eraserOn = false;
+});
+
 // Create a function that displays the grid.  element(div) creation will need to be placed in a for loop
 function createGrid() {
   backgroundColor.addEventListener("input", (e) => {
+    eraserOn = false;
     mainContainer.style.background = backgroundColor.value;
   });
 
@@ -76,6 +80,9 @@ function createGrid() {
         newDiv.style.background = colorSelector.value;
         if (isMouseDown == true && rainbowActive == true) {
           newDiv.style.background = randomColor();
+        }
+        if (isMouseDown == true && eraserOn == true) {
+          newDiv.style.backgroundColor = "white";
         }
       } else {
         return;

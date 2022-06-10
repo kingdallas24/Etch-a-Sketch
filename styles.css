@@ -77,11 +77,18 @@ button:hover {
 }
 
 .gridActive {
-  background-color: darkolivegreen;
+  color: white;
+  background-color: blue;
 }
 
 .showRainbow {
-  background-color: darkolivegreen;
+  color: white;
+  background-color: blue;
+}
+
+.eraserActive {
+  color: white;
+  background-color: blue;
 }
 
 .backgroundColor {
@@ -138,7 +145,7 @@ div > input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
   outline: 6px dotted blue;
   width: 300px;
 }
