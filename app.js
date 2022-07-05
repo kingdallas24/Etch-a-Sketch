@@ -128,10 +128,6 @@ function createGrid() {
   }
 }
 
-// Create a function to clear the div
-
-// Create a function for the range input
-
 function randomColor() {
   let red = Math.floor(Math.random() * 255);
   let green = Math.floor(Math.random() * 255);
@@ -140,3 +136,10 @@ function randomColor() {
   let rgbColor = `rgb(${red}, ${green}, ${blue})`;
   return rgbColor;
 }
+
+var twoSum = function (nums, target) {
+  nums = [];
+  target = null;
+
+  return nums[i];
+};
