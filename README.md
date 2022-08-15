@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 # Etch-a-Sketch
 
